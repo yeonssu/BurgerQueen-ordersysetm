@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19ebb537-aa4d-4ffc-82c5-e9e49c5db1d3" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/product/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/product/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/product/subproduct/BurgerSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/product/subproduct/Drink.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/product/subproduct/Hamburger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/product/subproduct/Side.java" afterDir="false" />
+    <list default="true" id="19ebb537-aa4d-4ffc-82c5-e9e49c5db1d3" name="Changes" comment="product class commit">
+      <change afterPath="$PROJECT_DIR$/src/app/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/OrderApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/product/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/product/ProductRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +61,8 @@
       <option name="presentableId" value="Default" />
       <updated>1672624357335</updated>
       <workItem from="1672624358384" duration="2364000" />
-      <workItem from="1672628226598" duration="1320000" />
+      <workItem from="1672628226598" duration="7875000" />
+      <workItem from="1672671671706" duration="6171000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1672624559200</created>
@@ -73,7 +71,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672624559200</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="product class commit">
+      <created>1672629690109</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672629690109</updated>
+    </task>
+    <task id="LOCAL-00003" summary="product class commit">
+      <created>1672629977062</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1672629977062</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,6 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="product class commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="product class commit" />
   </component>
 </project>

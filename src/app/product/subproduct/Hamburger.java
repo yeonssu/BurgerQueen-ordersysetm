@@ -13,7 +13,7 @@ public class Hamburger extends Product {
     public boolean isBurgerSet() {
         return isBurgerSet;
     }
-    public void setBurgerSet(boolean burgerSet) {
+    public void setIsBurgerSet(boolean burgerSet) {
         isBurgerSet = burgerSet;
     }
     public int getBurgerSetPrice() {
