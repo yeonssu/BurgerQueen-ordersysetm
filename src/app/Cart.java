@@ -1,18 +1,24 @@
 package app;
 
 import app.product.Product;
+import app.product.ProductRepository;
 import app.product.subproduct.BurgerSet;
 import app.product.subproduct.Drink;
 import app.product.subproduct.Hamburger;
 import app.product.subproduct.Side;
 
-import java.util.Deque;
 import java.util.Scanner;
 
 public class Cart {
     private Product[] items = new Product[0];
     private Scanner scanner = new Scanner(System.in);
+    private ProductRepository productRepository;
     private Menu menu;
+    public Cart(ProductRepository productRepository, Menu menu) {
+        this.productRepository = productRepository;
+        this.menu = menu;
+    }
+
     public void printCart(){
         System.out.println("🧺 장바구니");
         System.out.println("-".repeat(60));
@@ -31,7 +37,7 @@ public class Cart {
             if(product instanceof BurgerSet) {
                 BurgerSet burgerSet = (BurgerSet) product;
                 System.out.printf(
-                        "%s %6d원 (%s(케첩 %d개), %s(빨대 %s개)\n",
+                        "%s %6d원 (%s(케첩 %d개), %s(빨대 %s))\n",
                         burgerSet.getName(),
                         burgerSet.getPrice(),
                         burgerSet.getSide().getName(),
@@ -49,7 +55,7 @@ public class Cart {
             } else if (product instanceof Side) {
                 Side side = (Side) product;
                 System.out.printf(
-                        "%-8s %6d원 (케첩 %d개\n)",
+                        "%-8s %6d원 (케첩 %d개)\n",
                         side.getName(),
                         side.getPrice(),
                         side.getKetchup()
@@ -57,7 +63,7 @@ public class Cart {
             } else if (product instanceof Drink) {
                 Drink drink = (Drink) product;
                 System.out.printf(
-                        "%-8s %6d원 (빨대 %s\n)",
+                        "%-8s %6d원 (빨대 %s)\n",
                         drink.getName(),
                         drink.getPrice(),
                         drink.hasStraw() ? "있음" : "없음"
@@ -74,21 +80,28 @@ public class Cart {
     }
 
     public void addToCart(int productId){
-        // 2.2.1.
         //Product product = productId를 통해 productId를 id로 가지는 상품 찾기
+        Product product = productRepository.findById(productId);
 
-        // 2.2.2.
-        //상품 옵션 설정 // chooseOption()
+        //상품 옵션 설정
+        chooseOption(product);
 
-        // 2.2.3.
         //if (product가 Hamburger의 인스턴스이고, isBurgerSet이 true라면) {
         //    product = 세트 구성 // composeSet();
         //}
+        if (product instanceof Hamburger) {
+            Hamburger hamburger = (Hamburger) product;
+            if(hamburger.isBurgerSet()) product = composeSet(hamburger);
+        }
 
-        // 2.2.4.
         //items에 product 추가
+        Product[] newItems = new Product[items.length+1];
+        System.arraycopy(items,0,newItems,0,items.length);
+        newItems[newItems.length-1] = product;
+        items = newItems;
 
         //"[📣] XXXX를(을) 장바구니에 담았습니다." 출력
+        System.out.println("[📣] XXXX를(을) 장바구니에 담았습니다.");
     }
     private void chooseOption(Product product) {
         String input;
@@ -115,24 +128,25 @@ public class Cart {
         }
     }
     private BurgerSet composeSet(Hamburger hamburger) {
-        //"사이드를 골라주세요" 출력
-        //사이드 메뉴 출력
+        System.out.println("사이드를 골라주세요");
+        menu.printSides(false);
 
-        //String sideId = 사용자 입력 받기
-        //Side side = sideId를 id로 가지는 상품 검색
-        //사이드 옵션 선택
+        String sideId = scanner.nextLine();
+        Side side = (Side) productRepository.findById(Integer.parseInt(sideId));
+        chooseOption(side);
 
-        //"음료를 골라주세요." 출력
-        //음료 메뉴 출력
+        System.out.println("음료를 골라주세요.");
+        menu.printDrinks(false);
 
-        //String drinkId = 사용자 입력 받기
-        //Drink drink = drinkId를 id로 가지는 상품 검색
-        //드링크 옵션 선택
+        String drinkId = scanner.nextLine();
+        Drink drink = (Drink) productRepository.findById(Integer.parseInt(drinkId));
+        chooseOption(drink);
 
-        //String name = hamburger의 이름 + "세트";
-        //int price = hamburger의 BurgerSetPrice필드의 값
-        //int kcal = 햄버거, 사이드, 드링크의 칼로리 총합
-        //return new BurgerSet(name, price, kcal, hamburger, side, drink);
+        String name = hamburger.getName() + "세트";
+        int price = hamburger.getBurgerSetPrice();
+        int kcal = hamburger.getKcal() + side.getKcal() + drink.getKcal();
+
+        return new BurgerSet(name, price, kcal, hamburger, side, drink);
     }
 
 }

@@ -12,6 +12,11 @@ public class Product {
         this.price = price;
         this.kcal = kcal;
     }
+    public Product(String name, int price, int kcal) {
+        this.name = name;
+        this.price = price;
+        this.kcal = kcal;
+    }
 
     public int getId() {
         return id;

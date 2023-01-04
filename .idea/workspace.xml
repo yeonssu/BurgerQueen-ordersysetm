@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19ebb537-aa4d-4ffc-82c5-e9e49c5db1d3" name="Changes" comment="product class commit">
-      <change afterPath="$PROJECT_DIR$/src/app/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/OrderApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+    <list default="true" id="19ebb537-aa4d-4ffc-82c5-e9e49c5db1d3" name="Changes" comment="middle commit">
+      <change beforePath="$PROJECT_DIR$/src/app/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/OrderApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/OrderApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/product/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/product/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/product/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/product/subproduct/BurgerSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/product/subproduct/BurgerSet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -62,7 +63,7 @@
       <updated>1672624357335</updated>
       <workItem from="1672624358384" duration="2364000" />
       <workItem from="1672628226598" duration="7875000" />
-      <workItem from="1672671671706" duration="6171000" />
+      <workItem from="1672671671706" duration="20047000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1672624559200</created>
@@ -85,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672629977062</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="middle commit">
+      <created>1672754756313</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672754756313</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +113,75 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="product class commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="product class commit" />
+    <MESSAGE value="middle commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="middle commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/app/discount/discountCondition/CozDiscountCondition.java</url>
+          <line>10</line>
+          <properties field="discountPolicy" class="app.discount.discountCondition.CozDiscountCondition" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/app/discount/discountCondition/KidDiscountCondition.java</url>
+          <line>10</line>
+          <properties field="discountPolicy" class="app.discount.discountCondition.KidDiscountCondition" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/app/discount/discountCondition/CozDiscountCondition.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/app/discount/discountCondition/CozDiscountCondition.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/app/discount/discountCondition/CozDiscountCondition.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/app/discount/discountCondition/KidDiscountCondition.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/app/discount/discountCondition/KidDiscountCondition.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/app/discount/discountCondition/KidDiscountCondition.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/app/Order.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/app/Order.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/app/Order.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/app/Order.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
