@@ -7,8 +7,12 @@ import java.util.Scanner;
 
 public class KidDiscountCondition implements DiscountCondition{
     private boolean isSatisfied;
+
     //private FixedAmountDiscountPolicy fixedAmountDiscountPolicy = new FixedAmountDiscountPolicy(500);
     private DiscountPolicy discountPolicy;
+    public KidDiscountCondition(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
     public boolean isSatisfied() {
         return isSatisfied;
     }

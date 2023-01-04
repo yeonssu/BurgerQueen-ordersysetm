@@ -9,6 +9,11 @@ public class CozDiscountCondition implements DiscountCondition{
     private boolean isSatisfied;
     //private FixedRateDiscountPolicy fixedRateDiscountPolicy = new FixedRateDiscountPolicy(10);
     private DiscountPolicy discountPolicy;
+
+    public CozDiscountCondition(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
+
     public boolean isSatisfied() {
         return isSatisfied;
     }

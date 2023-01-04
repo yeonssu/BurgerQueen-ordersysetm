@@ -32,7 +32,7 @@ public class Cart {
         System.out.println("이전으로 돌아가려면 엔터를 누르세요. ");
         scanner.nextLine();
     }
-    private void printCartItemDetails(){
+    void printCartItemDetails(){
         for(Product product : items){
             if(product instanceof BurgerSet) {
                 BurgerSet burgerSet = (BurgerSet) product;
@@ -71,7 +71,7 @@ public class Cart {
             }
         }
     }
-    private int calculateTotalPrice() {
+    int calculateTotalPrice() {
         int totalPrice = 0;
         for (Product product : items) {
             totalPrice += product.getPrice();
@@ -80,28 +80,26 @@ public class Cart {
     }
 
     public void addToCart(int productId){
-        //Product product = productId를 통해 productId를 id로 가지는 상품 찾기
         Product product = productRepository.findById(productId);
 
-        //상품 옵션 설정
         chooseOption(product);
 
-        //if (product가 Hamburger의 인스턴스이고, isBurgerSet이 true라면) {
-        //    product = 세트 구성 // composeSet();
-        //}
         if (product instanceof Hamburger) {
             Hamburger hamburger = (Hamburger) product;
             if(hamburger.isBurgerSet()) product = composeSet(hamburger);
         }
+        Product newProduct;
+        if(product instanceof Hamburger) newProduct = new Hamburger((Hamburger) product);
+        else if(product instanceof Side) newProduct = new Side((Side) product);
+        else if(product instanceof Drink) newProduct = new Drink((Drink) product);
+        else newProduct = product; //BurgerSet는 composeSet()에서 새로운 BurgerSet을 만들어 리턴하므로 새로운 인스턴스를 만들 필요가 없다
 
-        //items에 product 추가
         Product[] newItems = new Product[items.length+1];
         System.arraycopy(items,0,newItems,0,items.length);
-        newItems[newItems.length-1] = product;
+        newItems[newItems.length-1] = newProduct;
         items = newItems;
 
-        //"[📣] XXXX를(을) 장바구니에 담았습니다." 출력
-        System.out.println("[📣] XXXX를(을) 장바구니에 담았습니다.");
+        System.out.printf("[📣] %s 를(을) 장바구니에 담았습니다.\n",newProduct.getName());
     }
     private void chooseOption(Product product) {
         String input;
@@ -133,14 +131,16 @@ public class Cart {
 
         String sideId = scanner.nextLine();
         Side side = (Side) productRepository.findById(Integer.parseInt(sideId));
-        chooseOption(side);
+        Side newSide = new Side(side);
+        chooseOption(newSide);
 
         System.out.println("음료를 골라주세요.");
         menu.printDrinks(false);
 
         String drinkId = scanner.nextLine();
         Drink drink = (Drink) productRepository.findById(Integer.parseInt(drinkId));
-        chooseOption(drink);
+        Drink newDrink = new Drink(drink);
+        chooseOption(newDrink);
 
         String name = hamburger.getName() + "세트";
         int price = hamburger.getBurgerSetPrice();
